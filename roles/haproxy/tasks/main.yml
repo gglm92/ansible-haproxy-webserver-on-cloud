@@ -1,0 +1,25 @@
+---
+# tasks file for haproxy
+- name:                 Install haproxy service 
+  apt:
+    name:               haproxy
+    state:              present
+
+- name:                 Enable init script
+  replace: 
+    dest:               '/etc/default/haproxy' 
+    regexp:             'ENABLED=0'
+    replace:            'ENABLED=1'
+
+- name:                  Update HAProxy config
+  template: 
+    src:                templates/haproxy.cfg 
+    dest:               "/etc/haproxy/haproxy.cfg"
+    mode:               '0755'
+    backup:             yes
+
+- name:                 restart haproxy
+  service: 
+    name:               haproxy 
+    state:              restarted
+
