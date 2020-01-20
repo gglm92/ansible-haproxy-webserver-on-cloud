@@ -1,0 +1,21 @@
+---
+# tasks file for webservers
+- name:                 Install http service 
+  apt:
+    name:               apache2
+    state:              present
+
+- name:                 Upgrade the page
+  template:
+    src:                index.html
+    dest:               "/var/www/html/index.html"
+    mode:               '0755'
+
+- name:                 Get webserver's facts
+  setup:
+  register:             webservers_facts
+
+- name:                 print
+  debug:
+    msg:                "{{ webservers_facts }}"
+
