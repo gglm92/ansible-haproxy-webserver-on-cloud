@@ -1,0 +1,8 @@
+---
+# vars file for createvmgcp
+gcp_project: mimetic-heaven-260405
+gcp_cred_kind: serviceaccount
+gcp_cred_json: mimetic-heaven-260405-e5d082f613a7.json
+gcp_cred_file: /tmp/{{ gcp_cred_json }}
+zone: "us-central1-a"
+region: "us-central1"
