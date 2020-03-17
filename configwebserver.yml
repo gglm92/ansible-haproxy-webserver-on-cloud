@@ -1,11 +1,11 @@
 ---
 - name:                     Install and configure webservers
-  hosts:                    tag_httpservers
+  hosts:                    tag_type_webserver
   roles:
     - roles/webservers
 
 - name:                     Install and configure haproxy server
-  hosts:                    tag_haproxy
+  hosts:                    tag_type_haproxy
   roles:
     - roles/haproxy
 
