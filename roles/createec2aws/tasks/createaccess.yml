@@ -1,0 +1,30 @@
+---
+# tasks file for roles/createec2aws/createaccess.yml
+- name:                 Upload public key to AWS
+  ec2_key:
+    name:               "{{ key_name }}"
+    key_material:       "{{ keymaterial }}"
+    region:             "{{ region }}"
+    aws_access_key:     '{{ lookup("env", "AWS_ACCESS_KEY_ID") }}'
+    aws_secret_key:     '{{ lookup("env", "AWS_SECRET_ACCESS_KEY") }}'
+
+- name:                 Create security group
+  ec2_group:
+    name:               "{{ sec_group }}"
+    description:        "Sec group for app {{ id }}"
+    region:             "{{ region }}"
+    aws_access_key:     '{{ lookup("env", "AWS_ACCESS_KEY_ID") }}'
+    aws_secret_key:     '{{ lookup("env", "AWS_SECRET_ACCESS_KEY") }}'
+    rules:
+      - proto:          tcp
+        ports:
+          - 22
+        cidr_ip:        0.0.0.0/0
+        rule_desc:      allow all on ssh port
+      - proto:          tcp
+        ports:
+          - 80
+        cidr_ip:        0.0.0.0/0
+        rule_desc:      allow all on http port
+  register:             result_sec_group
+
