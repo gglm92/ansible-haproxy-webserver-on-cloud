@@ -12,7 +12,7 @@
     wait:               true
     instance_tags:
       type:             webserver
-    count:              1
+    count:              "{{ number_ec2_machines }}"
   register:             ec2
 
 - name:                 Wait for SSH to come up
