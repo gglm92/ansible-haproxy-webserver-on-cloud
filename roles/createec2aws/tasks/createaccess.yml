@@ -11,7 +11,7 @@
 - name:                 Create security group
   ec2_group:
     name:               "{{ sec_group }}"
-    description:        "Sec group for app {{ id }}"
+    description:        "Sec group for webservers"
     region:             "{{ region }}"
     aws_access_key:     '{{ lookup("env", "AWS_ACCESS_KEY_ID") }}'
     aws_secret_key:     '{{ lookup("env", "AWS_SECRET_ACCESS_KEY") }}'
