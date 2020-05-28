@@ -3,7 +3,6 @@
 key_name: my_aws
 region: us-east-1
 image: ami-07ebfd5b3428b6f4d # https://cloud-images.ubuntu.com/locator/ec2/
-id: "web-server-2"
 id_haproxy: "haproxy"
 sec_group: "webservers"
 keymaterial: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJPSLanbfFzQWx+0Clo9LxLlc4Z9k/6n9llDLiWLTTZZdWSRkBhDXnl3809KUJ1mfzgZHkN3RUMPFC1Sor7TarErzJ7RfmeP33ob045tl/jIBvAMBzDRBPT4zA7aONcXZe9BM7EkAMG3F/cFEIrlug57uNA0oc2qYGY8I8u6FgtabwzNt8X53Mpi1fHsk1lUDy8JrhaFv63ieKJm0aYE2S2f5n5sjWYbrEVUR2/03gCZveYGj74rDBckpDWyPbswvKWiteP4Fyq3Ud1OJSztGRgYpp3xBGIcPDBxFcLdrRv06hFHV6MIP/myoZQAmPsxFUhDJvaPkNHwVodvI+acuX awx@localhost.localdomain"
