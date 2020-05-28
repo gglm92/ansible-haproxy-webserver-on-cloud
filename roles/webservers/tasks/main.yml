@@ -4,6 +4,7 @@
   apt:
     name:               apache2
     state:              present
+    update_cache:       yes
 
 - name:                 Upgrade the page
   template:
