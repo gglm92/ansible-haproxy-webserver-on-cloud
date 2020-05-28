@@ -11,7 +11,7 @@
   set_fact:
     haproxy_exists: true
   with_items: "{{ result.instances }}"
-  when: item.tags.type == "haproxy" 
+  when: item.tags.type is defined and item.tags.type == "haproxy" 
 
 - name:                   Block for create haproxy server if it doesnt exist
   block:
