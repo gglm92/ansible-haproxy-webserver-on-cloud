@@ -21,7 +21,7 @@
       aws_access_key:     '{{ lookup("env", "AWS_ACCESS_KEY_ID") }}'
       aws_secret_key:     '{{ lookup("env", "AWS_SECRET_ACCESS_KEY") }}'
       key_name:           "{{ key_name }}"
-      id:                 "{{ id_haproxy }}"
+#     id:                 "{{ id_haproxy }}"
       group_id:           "{{ result_sec_group.group_id }}"
       image:              "{{ image }}"
       instance_type:      t2.micro
